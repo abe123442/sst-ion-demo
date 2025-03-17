@@ -1,10 +1,10 @@
-import { Resource } from "sst";
 import { Handler } from "aws-lambda";
-import { Example } from "@monorepo-template/core/example";
 
-export const handler: Handler = async (_event) => {
+export const handler: Handler = async (event, ctx) => {
+  console.log("EVENT: \n" + JSON.stringify(event, null, 2))
+
   return {
     statusCode: 200,
-    body: `${Example.hello()} Linked to ${Resource.MyBucket.name}.`,
+    body: `Hello there ${ctx.awsRequestId}`,
   };
 };
