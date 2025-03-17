@@ -1,5 +1,4 @@
 /// <reference path="./.sst/platform/config.d.ts" />
-
 export default $config({
   app(input) {
     return {
@@ -7,10 +6,10 @@ export default $config({
       removal: input?.stage === "production" ? "retain" : "remove",
       protect: ["production"].includes(input?.stage),
       home: "aws",
+      providers: { aws: "6.72.0" },
     };
   },
   async run() {
-    // import just the api for now
-    await import("./infra/api");
+    await import ('./infra/api')
   },
 });

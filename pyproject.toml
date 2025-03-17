@@ -1,0 +1,15 @@
+[project]
+name = "sst-ion-demo"
+version = "0.1.0"
+
+description = "Just trying out sst v3 support for python"
+readme = "README.md"
+
+dependencies = []
+requires-python = "==3.11.*"
+
+[tool.uv.workspace]
+members=["functions"]
+
+[tool.uv.sources]
+sst = { git = "https://github.com/sst/sst.git", branch = "dev", subdirectory = "sdk/python" }

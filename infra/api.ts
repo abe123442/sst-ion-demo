@@ -1,8 +1,8 @@
-// import { bucket } from "./storage";
-
-export const api = new sst.aws.ApiGatewayV2("Api")
-
-api.route('GET /', {
-  // link: [bucket],
-  handler: 'packages/functions/src/pyapi.handler'
-})
+export const api = new sst.aws.Function("Scraper", {
+    handler: 'functions/src/functions/api.handler',
+    python: {
+        container: false,
+    },
+    runtime: 'python3.11',
+    url: true,
+});
