@@ -1,0 +1,14 @@
+[project]
+name = "services"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Abraham Assariparambil Earnest", email = "z5481911@ad.unsw.edu.au" }
+]
+requires-python = "==3.11.*"
+dependencies = ["sst", "praw", "dotenv", "boto3"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
