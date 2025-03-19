@@ -6,4 +6,26 @@ class Resource:
     class App:
         name: str
         stage: str
+    class Bus:
+        arn: str
+        name: str
+        type: str
+    class FunctionNotifier:
+        name: str
+        type: str
+    class RedditClientID:
+        type: str
+        value: str
+    class RedditClientSecret:
+        type: str
+        value: str
+    class RedditScraper:
+        name: str
+        type: str
+    class SourceScraper:
+        name: str
+        type: str
+    class StorageAdage3:
+        name: str
+        type: str
 

@@ -3,6 +3,7 @@ from praw import Reddit
 from dotenv import load_dotenv
 import os
 import boto3
+import json
 
 load_dotenv()
 def getenv(key: str) -> str:
@@ -28,8 +29,8 @@ reddit = Reddit(
     user_agent=USER_AGENT
 )
 
-def scrape_reddit():
-    bucket_name = Resource.storage__adage_3.name
+def scrape():
+    bucket_name = Resource.StorageAdage3.name
 
     s3 = boto3.client('s3')
     s3.put_object(
@@ -71,6 +72,16 @@ def scrape_reddit():
     #     print('\n' + separator + '\n')
 
 
+def handler(event, context):
+    scrape()
+
+    return {
+        'statusCode': 200,
+        'body': json.dumps({
+            'message': 'Reddit scrape complete.',
+        })
+    }
+
 
 if __name__ == "__main__":
-    scrape_reddit()
+    scrape()

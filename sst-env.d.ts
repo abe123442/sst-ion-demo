@@ -5,6 +5,35 @@
 
 declare module "sst" {
   export interface Resource {
+    "Bus": {
+      "arn": string
+      "name": string
+      "type": "sst.aws.Bus"
+    }
+    "FunctionNotifier": {
+      "name": string
+      "type": "sst.aws.Function"
+    }
+    "RedditClientID": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "RedditClientSecret": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "RedditScraper": {
+      "name": string
+      "type": "sst.aws.Function"
+    }
+    "SourceScraper": {
+      "name": string
+      "type": "sst.aws.Function"
+    }
+    "StorageAdage3": {
+      "name": string
+      "type": "sst.aws.Bucket"
+    }
   }
 }
 /// <reference path="sst-env.d.ts" />

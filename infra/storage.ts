@@ -1,1 +1,1 @@
-export const storage = new sst.aws.Bucket('storage__adage_3')
+export const storage = new sst.aws.Bucket('StorageAdage3')
